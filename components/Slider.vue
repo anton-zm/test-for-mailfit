@@ -15,7 +15,7 @@
       <div class="swiper-wrapper">
         <div
           class="swiper-slide"
-          v-for="(item, index) in cities"
+          v-for="(item, index) in renderSlide"
           :key="index"
           @click="openPanel(item)"
         >
@@ -38,16 +38,6 @@
               </div>
             </transition>
           </div>
-          <!-- <transition name="fade">
-            <div v-if="item.panel" class="slider__panel">
-              <p class="slider__panel-text">
-                {{ item.description }}
-              </p>
-              <nuxt-link :to="item.url" class="slider__paner-btn"
-                >Подробнее</nuxt-link
-              >
-            </div></transition
-          > -->
         </div>
       </div>
     </div>
@@ -68,14 +58,7 @@ export default {
   components: {
     'content-box': Content,
   },
-  // computed: {
-  //   cityList() {
-  //     return this.$store.getters['data/getCities']
-  //   },
-  //   countryList() {
-  //     return this.$store.getters['data/getCountries']
-  //   },
-  // },
+
   methods: {
     chooseCountry(elem) {
       const countries = Array.from(document.querySelectorAll('.nav-list__item'))
@@ -83,6 +66,23 @@ export default {
         e.classList.remove('navList__item_active')
         event.target.classList.add('navList__item_active')
       })
+      this.slideFilter(elem.name)
+    },
+    onloadRender() {
+      this.cities.forEach((e) => {
+        this.renderSlide.push(e)
+      })
+    },
+    slideFilter(country) {
+      this.renderSlide = this.cities
+      if (country === 'Все страны') {
+        this.renderSlide = this.cities
+      } else {
+        const result = this.renderSlide.filter((e) => {
+          return e.country === country
+        })
+        return (this.renderSlide = result)
+      }
     },
     openPanel(card) {
       const position = event.clientX
@@ -96,6 +96,7 @@ export default {
   },
   data() {
     return {
+      renderSlide: [],
       countries: [
         {
           name: 'Все страны',
@@ -306,7 +307,11 @@ export default {
     }
   },
   mounted() {
-    this.cities.forEach((e) => {
+    // this.cities.forEach((e) => {
+    //   this.renderSlide.push(e)
+    // })
+    this.onloadRender()
+    this.renderSlide.forEach((e) => {
       e.panelSide = false
     })
   },
