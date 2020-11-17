@@ -1,29 +1,26 @@
 <template>
   <main class="main">
     <Title class="main__title" :title="'Наши направления'" />
-    <List :array="countryList" />
-    <Slider :array="cityList" />
+    <!-- <List :array="countryList" /> -->
+    <Slider />
   </main>
 </template>
 
 <script>
 import Title from '@/components/Title'
-import List from '@/components/navList'
+// import List from '@/components/navList'
 import Slider from '@/components/Slider'
 export default {
   components: {
     Title,
-    List,
+    // List,
     Slider,
   },
-  computed: {
-    countryList() {
-      return this.$store.getters['data/getCountries']
-    },
-    cityList() {
-      return this.$store.getters['data/getCities']
-    },
-  },
+  // computed: {
+  //   countryList() {
+  //     return this.$store.getters['data/getCountries']
+  //   },
+  // },
 }
 </script>
 
