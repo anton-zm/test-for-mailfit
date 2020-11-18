@@ -2,6 +2,7 @@
   "name": "test-for-mailFit",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://github.com/anton-zm/test-for-mailfit",
   "scripts": {
     "dev": "nuxt --open --watch",
     "build": "nuxt build",
