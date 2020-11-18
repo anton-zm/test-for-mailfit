@@ -17,7 +17,8 @@
           class="swiper-slide"
           v-for="(item, index) in renderSlide"
           :key="index"
-          @click="openPanel(item)"
+          @click.self="openPanel(item)"
+          :class="{ tablet_slide: tablet }"
         >
           <img :src="item.img" :alt="item.name" class="slider__img" />
           <div class="slider__info">
@@ -32,9 +33,15 @@
                 <p class="slider__panel-text">
                   {{ item.description }}
                 </p>
-                <nuxt-link :to="item.url" class="slider__paner-btn"
+                <nuxt-link :to="item.url" class="slider__panel-btn"
                   >Подробнее</nuxt-link
                 >
+                <img
+                  @click="item.panel = false"
+                  src="close.png"
+                  alt="Закрыть"
+                  class="slider__panel-close"
+                />
               </div>
             </transition>
           </div>
@@ -88,11 +95,21 @@ export default {
     openPanel(card) {
       const position = event.clientX
       const width = window.innerWidth
+      if (width < 769) {
+        this.tablet(true)
+      }
 
       if (position > (width / 3) * 2) {
         card.panelLeft = true
       }
       card.panel = !card.panel
+    },
+    tablet(a) {
+      if (a) {
+        return true
+      } else {
+        return false
+      }
     },
   },
   data() {
@@ -324,14 +341,8 @@ export default {
             slidesPerColumnFill: 'row',
           },
 
-          769: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-            slidesPerColumn: 2,
-            slidesPerColumnFill: 'row',
-          },
           860: {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 30,
             slidesPerColumn: 2,
             slidesPerColumnFill: 'row',
@@ -486,7 +497,7 @@ export default {
   line-height: 140%;
   color: #ffffff;
 }
-.slider__paner-btn {
+.slider__panel-btn {
   margin-top: 14px;
   border-radius: 8px;
   border: 2px solid white;
@@ -499,6 +510,11 @@ export default {
   border: none;
   background: #0047fe;
 }
+.slider__panel-close {
+  position: absolute;
+  top: 25px;
+  right: 16px;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -507,10 +523,19 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
+.tablet_slide {
+  width: 100%;
+}
 
 @media screen and (max-width: 768px) {
   .swiper-pagination {
     visibility: visible;
+  }
+  .swiper-slide {
+    min-height: 330px;
+  }
+  .slider__panel {
+    min-height: 330px;
   }
 }
 </style>
