@@ -27,7 +27,7 @@
               <div
                 v-if="item.panel"
                 class="slider__panel"
-                :class="{ slider__panel_left: item.panelSide }"
+                :class="{ slider__panel_left: item.panelLeft }"
               >
                 <p class="slider__panel-text">
                   {{ item.description }}
@@ -40,6 +40,7 @@
           </div>
         </div>
       </div>
+      <div class="swiper-pagination"></div>
     </div>
     <div class="button-prev navigation" @click="mySwiper.slidePrev()">
       <img src="pagL.png" alt="предыдущий" />
@@ -89,7 +90,7 @@ export default {
       const width = window.innerWidth
 
       if (position > (width / 3) * 2) {
-        card.panelSide = true
+        card.panelLeft = true
       }
       card.panel = !card.panel
     },
@@ -303,16 +304,52 @@ export default {
           enabled: true,
           onlyInViewport: false,
         },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true,
+        },
+        breakpoints: {
+          220: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+            slidesPerColumn: 2,
+            slidesPerColumnFill: 'row',
+          },
+
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            slidesPerColumn: 2,
+            slidesPerColumnFill: 'row',
+          },
+
+          769: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            slidesPerColumn: 2,
+            slidesPerColumnFill: 'row',
+          },
+          860: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            slidesPerColumn: 2,
+            slidesPerColumnFill: 'row',
+          },
+          1280: {
+            slidesPerView: 6,
+            spaceBetween: 30,
+            slidesPerColumn: 2,
+            slidesPerColumnFill: 'row',
+          },
+        },
       },
     }
   },
   mounted() {
-    // this.cities.forEach((e) => {
-    //   this.renderSlide.push(e)
-    // })
     this.onloadRender()
     this.renderSlide.forEach((e) => {
-      e.panelSide = false
+      e.panelLeft = false
     })
   },
 }
@@ -322,6 +359,7 @@ export default {
 .nav-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   list-style-type: none;
   padding-left: 0;
@@ -333,11 +371,11 @@ export default {
   font-size: 16px;
   line-height: 19px;
   color: #ffffff;
-  margin-left: 34px;
+  margin: 14px 17px 0 17px;
   cursor: pointer;
 }
 .nav-list__item:first-of-type {
-  margin-left: 0;
+  margin: 14px 17px 0 0;
 }
 .navList__item_active {
   background: #80a0f2;
@@ -350,7 +388,9 @@ export default {
 .slider {
   width: 100%;
   position: relative;
+  padding-bottom: 60px;
 }
+
 .swiper-slide {
   min-height: 250px;
   display: flex;
@@ -358,6 +398,17 @@ export default {
   justify-content: flex-end;
   cursor: pointer;
 }
+.swiper-pagination {
+  visibility: hidden;
+  margin-top: 20px;
+}
+.swiper-pagination-bullet {
+  background: #ffffff;
+}
+.swiper-pagination-bullet-active {
+  background: #0047ff;
+}
+
 .slider__img {
   position: absolute;
   top: 0;
@@ -381,13 +432,13 @@ export default {
 }
 .button-prev {
   position: absolute;
-  top: 240px;
+  bottom: 250px;
   left: -90px;
 }
 
 .button-next {
   position: absolute;
-  top: 240px;
+  bottom: 250px;
   right: -90px;
 }
 .swiper-button-next::after,
@@ -418,13 +469,16 @@ export default {
   background: linear-gradient(0deg, #254595, #254595);
   min-height: 250px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   z-index: 2;
 }
 .slider__panel_left {
   position: absolute;
   top: 0;
   left: -400px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 .slider__panel-text {
   font-weight: normal;
@@ -452,5 +506,11 @@ export default {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-pagination {
+    visibility: visible;
+  }
 }
 </style>
