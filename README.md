@@ -2,13 +2,13 @@
 
 Тестовое задание для компании Mailfit
 
-## Build Setup
+## Запуск приложения
 
 ```bash
-# install dependencies
+# установить зависимости
 $ npm install
 
-# serve with hot reload at localhost:3000
+# запустить в режиме разработки
 $ npm run dev
 
 
