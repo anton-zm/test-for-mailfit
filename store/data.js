@@ -33,7 +33,7 @@ export const state = () => ({
     {
       name: 'Милан',
       country: 'Италия',
-      img: 'milan.png',
+      img: '/milan.png',
       url: '',
       panel: false,
 
@@ -43,7 +43,7 @@ export const state = () => ({
     {
       name: 'Фрайбург',
       country: 'Германия',
-      img: 'friburg.png',
+      img: '/friburg.png',
       url: '',
       panel: false,
       description:
@@ -52,7 +52,7 @@ export const state = () => ({
     {
       name: 'Лиссабон',
       country: 'Португалия',
-      img: 'lisbon.png',
+      img: '/lisbon.png',
       url: '',
       panel: false,
       description:
@@ -61,7 +61,7 @@ export const state = () => ({
     {
       name: 'Виченца',
       country: 'Италия',
-      img: 'vicenca.png',
+      img: '/vicenca.png',
       url: '',
       panel: false,
       description:
@@ -70,7 +70,7 @@ export const state = () => ({
     {
       name: 'Барселона',
       country: 'Испания',
-      img: 'barselona.png',
+      img: '/barselona.png',
       url: '',
       panel: false,
       description:
@@ -79,7 +79,7 @@ export const state = () => ({
     {
       name: 'Порту',
       country: 'Португалия',
-      img: 'porto.png',
+      img: '/porto.png',
       url: '',
       panel: false,
       description:
@@ -88,7 +88,7 @@ export const state = () => ({
     {
       name: 'Гуарда',
       country: 'Португалия',
-      img: 'guardo.png',
+      img: '/guardo.png',
       url: '',
       panel: false,
       description:
@@ -97,7 +97,7 @@ export const state = () => ({
     {
       name: 'Генуя',
       country: 'Италия',
-      img: 'genoa.png',
+      img: '/genoa.png',
       url: '',
       panel: false,
       description:
@@ -106,7 +106,7 @@ export const state = () => ({
     {
       name: 'Падуя',
       country: 'Италия',
-      img: 'padua.png',
+      img: '/padua.png',
       url: '',
       panel: false,
       description:
@@ -115,7 +115,7 @@ export const state = () => ({
     {
       name: 'Валенсия',
       country: 'Испания',
-      img: 'valensia.png',
+      img: '/valensia.png',
       url: '',
       panel: false,
       description:
@@ -124,7 +124,7 @@ export const state = () => ({
     {
       name: 'Салоники',
       country: 'Греция',
-      img: 'saloniki.png',
+      img: '/saloniki.png',
       url: '',
       panel: false,
       description:
@@ -133,7 +133,7 @@ export const state = () => ({
     {
       name: 'Афины',
       country: 'Греция',
-      img: 'athens.png',
+      img: '/athens.png',
       url: '',
       panel: false,
       description:
@@ -142,7 +142,7 @@ export const state = () => ({
     {
       name: 'Каш',
       country: 'Турция',
-      img: 'kash.png',
+      img: '/kash.png',
       url: '',
       panel: false,
       description:
@@ -151,7 +151,7 @@ export const state = () => ({
     {
       name: 'Мадрид',
       country: 'Испания',
-      img: 'madrid.png',
+      img: '/madrid.png',
       url: '',
       panel: false,
       description:
@@ -160,7 +160,7 @@ export const state = () => ({
     {
       name: 'Берлин',
       country: 'Германия',
-      img: 'berlin.png',
+      img: '/berlin.png',
       url: '',
       panel: false,
       description:
@@ -169,7 +169,7 @@ export const state = () => ({
     {
       name: 'Анталия',
       country: 'Турция',
-      img: 'antalia.png',
+      img: '/antalia.png',
       url: '',
       panel: false,
       description:
@@ -178,7 +178,7 @@ export const state = () => ({
     {
       name: 'Венеция',
       country: 'Италия',
-      img: 'vicenca.png',
+      img: '/vicenca.png',
       url: '',
       panel: false,
       description:
@@ -187,7 +187,7 @@ export const state = () => ({
     {
       name: 'Стамбул',
       country: 'Турция',
-      img: 'stambul.png',
+      img: '/stambul.png',
       url: '',
       panel: false,
       description:

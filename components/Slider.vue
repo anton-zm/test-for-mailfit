@@ -149,7 +149,7 @@ export default {
         {
           name: 'Милан',
           country: 'Италия',
-          img: 'milan.png',
+          img: '/milan.png',
           url: '',
           panel: false,
 
@@ -159,7 +159,7 @@ export default {
         {
           name: 'Фрайбург',
           country: 'Германия',
-          img: 'friburg.png',
+          img: '/friburg.png',
           url: '',
           panel: false,
           description:
@@ -168,7 +168,7 @@ export default {
         {
           name: 'Лиссабон',
           country: 'Португалия',
-          img: 'lisbon.png',
+          img: '/lisbon.png',
           url: '',
           panel: false,
           description:
@@ -177,7 +177,7 @@ export default {
         {
           name: 'Виченца',
           country: 'Италия',
-          img: 'vicenca.png',
+          img: '/vicenca.png',
           url: '',
           panel: false,
           description:
@@ -186,7 +186,7 @@ export default {
         {
           name: 'Барселона',
           country: 'Испания',
-          img: 'barselona.png',
+          img: '/barselona.png',
           url: '',
           panel: false,
           description:
@@ -195,7 +195,7 @@ export default {
         {
           name: 'Порту',
           country: 'Португалия',
-          img: 'porto.png',
+          img: '/porto.png',
           url: '',
           panel: false,
           description:
@@ -204,7 +204,7 @@ export default {
         {
           name: 'Гуарда',
           country: 'Португалия',
-          img: 'guardo.png',
+          img: '/guardo.png',
           url: '',
           panel: false,
           description:
@@ -213,7 +213,7 @@ export default {
         {
           name: 'Генуя',
           country: 'Италия',
-          img: 'genoa.png',
+          img: '/genoa.png',
           url: '',
           panel: false,
           description:
@@ -222,7 +222,7 @@ export default {
         {
           name: 'Падуя',
           country: 'Италия',
-          img: 'padua.png',
+          img: '/padua.png',
           url: '',
           panel: false,
           description:
@@ -231,7 +231,7 @@ export default {
         {
           name: 'Валенсия',
           country: 'Испания',
-          img: 'valensia.png',
+          img: '/valensia.png',
           url: '',
           panel: false,
           description:
@@ -240,7 +240,7 @@ export default {
         {
           name: 'Салоники',
           country: 'Греция',
-          img: 'saloniki.png',
+          img: '/saloniki.png',
           url: '',
           panel: false,
           description:
@@ -249,7 +249,7 @@ export default {
         {
           name: 'Афины',
           country: 'Греция',
-          img: 'athens.png',
+          img: '/athens.png',
           url: '',
           panel: false,
           description:
@@ -258,7 +258,7 @@ export default {
         {
           name: 'Каш',
           country: 'Турция',
-          img: 'kash.png',
+          img: '/kash.png',
           url: '',
           panel: false,
           description:
@@ -267,7 +267,7 @@ export default {
         {
           name: 'Мадрид',
           country: 'Испания',
-          img: 'madrid.png',
+          img: '/madrid.png',
           url: '',
           panel: false,
           description:
@@ -276,7 +276,7 @@ export default {
         {
           name: 'Берлин',
           country: 'Германия',
-          img: 'berlin.png',
+          img: '/berlin.png',
           url: '',
           panel: false,
           description:
@@ -285,7 +285,7 @@ export default {
         {
           name: 'Анталия',
           country: 'Турция',
-          img: 'antalia.png',
+          img: '/antalia.png',
           url: '',
           panel: false,
           description:
@@ -294,7 +294,7 @@ export default {
         {
           name: 'Венеция',
           country: 'Италия',
-          img: 'vicenca.png',
+          img: '/vicenca.png',
           url: '',
           panel: false,
           description:
@@ -303,7 +303,7 @@ export default {
         {
           name: 'Стамбул',
           country: 'Турция',
-          img: 'stambul.png',
+          img: '/stambul.png',
           url: '',
           panel: false,
           description:
